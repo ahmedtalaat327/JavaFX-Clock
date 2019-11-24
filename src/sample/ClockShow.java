@@ -198,7 +198,7 @@ public class ClockShow extends Thread{
                 rotate2.setPivotY(MinutTick.getPrefHeight() / 2);
                 ////********************************
 
-                double houres = (double) (calendar.get(Calendar.HOUR));
+                double houres = (double) (calendar.get(Calendar.HOUR)) + ((minutes / 60.0 * 2.0 * Math.PI)/Math.PI/3);
                 double houresAngle = houres/12.0*2.0*Math.PI;
 
                 //Setting the angle for the rotation
