@@ -187,7 +187,8 @@ public class ClockShow extends Thread{
                 rotate1.setPivotY(SectTick.getPrefHeight() / 2);
                 ////********************************
 
-                double minutes = (double) (calendar.get(Calendar.MINUTE));
+                double minutes = (double)(calendar.get(Calendar.MINUTE)) +
+                        (double)(calendar.get(Calendar.SECOND))/60.0;
                 double minutesAngle = minutes / 60.0 * 2.0 * Math.PI;
 
                 //Setting the angle for the rotation
@@ -198,7 +199,8 @@ public class ClockShow extends Thread{
                 rotate2.setPivotY(MinutTick.getPrefHeight() / 2);
                 ////********************************
 
-                double houres = (double) (calendar.get(Calendar.HOUR)) + ((minutes / 60.0 * 2.0 * Math.PI)/Math.PI/3);
+                double houres = (double)(calendar.get(Calendar.HOUR_OF_DAY)%12) +
+                        (double)(calendar.get(Calendar.MINUTE))/60.0;
                 double houresAngle = houres/12.0*2.0*Math.PI;
 
                 //Setting the angle for the rotation
